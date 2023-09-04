@@ -123,10 +123,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: 
+      - tests
       - build_and_push_to_docker_hub
       - build_frontend_and_push_to_docker_hub
       - build_gateway_and_push_to_docker_hub
-      - test
     if: github.ref == 'refs/heads/master'
     steps:
     - name: Checkout repo
