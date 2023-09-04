@@ -24,6 +24,7 @@ services:
     volumes:
       - static:/static
   gateway:
+    depends_on: backend
     image: evakhi/kittygram_gateway
     env_file: .env
     ports:
