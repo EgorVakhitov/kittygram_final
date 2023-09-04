@@ -24,7 +24,8 @@ services:
     volumes:
       - static:/static
   gateway:
-    depends_on: backend
+    depends_on: 
+      - backend
     build: ./nginx/
     env_file: .env
     ports:
